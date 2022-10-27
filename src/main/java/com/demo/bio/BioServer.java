@@ -1,4 +1,4 @@
-package com.bio;
+package com.demo.bio;
 
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -19,6 +19,11 @@ public class BioServer {
      * 3.发送指令 send + "输入的文字"
      * 4.观察打印的线程,可以证明一个客户链接一个线程.
      * 5.观察阻塞
+     *
+     * 小结:
+     * 1) 每个请求都需要创建独立的线程，与对应的客户端进行数据Read，业务处理，数据Write
+     * 2) 当并发数较大时，需要创建大量线程来处理连接，系统资源占用较大。
+     * 3) 连接建立后，如果当前线程暂时没有数据可读，则线程就阻塞在Read 操作上，造成线程资源浪费
      */
     public static void main(String[] args) throws Exception {
         //利用线程池机制
