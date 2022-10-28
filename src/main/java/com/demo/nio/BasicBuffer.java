@@ -3,7 +3,7 @@ package com.demo.nio;
 import java.nio.IntBuffer;
 
 /**
- * @Describe:
+ * @Describe: debug理解buffer的4个参数性质,以及flip()切换读写
  * @Author: HAPPY
  * @Date: 2022-10-27 16:23 星期四
  **/
