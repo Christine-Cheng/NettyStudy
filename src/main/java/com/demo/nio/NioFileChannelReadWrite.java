@@ -64,4 +64,39 @@ public class NioFileChannelReadWrite {
             e.printStackTrace();
         }
     }
+    
+    //demo2
+    /*
+    public static void main(String[] args) {
+        try {
+            String fileInPath = "staticFile/KongFuPanda.jpeg";
+            String fileOutPath = "staticFile/KongFuPandaCopy.jpeg";
+            
+            FileInputStream fileInputStream = new FileInputStream(fileInPath);
+            FileOutputStream fileOutputStream = new FileOutputStream(fileOutPath);
+            
+            FileChannel inputChannel = fileInputStream.getChannel();
+            FileChannel outputChannel = fileOutputStream.getChannel();
+            
+            ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+            
+            while (true) {
+                byteBuffer.clear();
+                int read = inputChannel.read(byteBuffer);
+                if (read == -1) {
+                    break;
+                }
+                byteBuffer.flip();
+                outputChannel.write(byteBuffer);
+            }
+            
+            fileInputStream.close();
+            fileOutputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    */
 }
