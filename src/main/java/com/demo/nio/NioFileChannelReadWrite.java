@@ -36,12 +36,12 @@ public class NioFileChannelReadWrite {
                     return this;
                 }
                 */
-                byteBuffer.clear();
+                byteBuffer.clear();//参数position 初始化
                 
                 int read = fileChannelIn.read(byteBuffer);//channel中数读到buffer
                 
                 /*
-                不进行clear()的后果是:始终在读hb从0-file.length()位置的数据(最多是读取hb从0-511位置的数据)
+                不进行clear()的后果是:始终在读完hb从0-file.length()位置的数据(hb最多是读取从0-capacity的位置的数据)后,其position等于文件字节长度
                 而buffer中的数据是不会被清除的,既是hb从0-511位置的数据不会被覆盖
                 所以文件中会重复写入hb从0-511位置的数据
                 */
@@ -57,6 +57,7 @@ public class NioFileChannelReadWrite {
                 //写入输出流
                 fileChannelOut.write(byteBuffer);
             }
+            
             fileOutputStream.close();
             fileInputStream.close();
         } catch (Exception e) {
