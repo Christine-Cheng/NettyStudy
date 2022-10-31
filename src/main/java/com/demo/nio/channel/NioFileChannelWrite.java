@@ -1,4 +1,4 @@
-package com.demo.nio;
+package com.demo.nio.channel;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
