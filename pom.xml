@@ -67,6 +67,37 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <!--压缩和解压-->
+        <!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.12</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+        <!--压缩库:定义了一个用于处理 ar,cpio,Unix 转储,tar,zip,gzip,XZ,Pack200,bzip2、7z,arj,
+        lzma,snappy,DEFLATE,lz4,Brotli,Zstandard,DEFLATE64 和 Z 文件的 API-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.22</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
