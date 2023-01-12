@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-28 17:35 星期五
  **/
-public class NioFileChannelRead {
+public class Test02NioFileChannelRead {
     public static void main(String[] args) {
         try {
             //NIO是对Java原生IO流的包装

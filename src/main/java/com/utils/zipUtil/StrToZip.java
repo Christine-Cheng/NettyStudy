@@ -30,7 +30,7 @@ public class StrToZip {
     public static String saveToDescription(String Description, String UID, String shop, String itemid) {
         
         //本地地址
-        String startpath = "c:\\description\\";
+        String startpath = "./TestFile";
         //网络访问地址
         String ipPath = "http://localhost:8080/description";
         

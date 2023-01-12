@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
  * @Author: HAPPY
  * @Date: 2022-10-31 11:22 星期一
  **/
-public class NioBufferReadOnly {
+public class Test03NioBufferReadOnly {
     
     public static void main(String[] args) {
         ByteBuffer byteBuffer = ByteBuffer.allocate(33);

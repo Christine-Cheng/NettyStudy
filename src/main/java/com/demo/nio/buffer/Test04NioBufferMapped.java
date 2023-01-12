@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-31 14:30 星期一
  **/
-public class NIOBufferMapped {
+public class Test04NioBufferMapped {
     public static void main(String[] args) {
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile("staticFile/file01.txt", "rw");//rw:读写模式

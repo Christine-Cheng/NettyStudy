@@ -1,6 +1,6 @@
 package com.demo.test;
 
-import com.demo.nio.buffer.NioBufferPutGetDataType;
+import com.demo.nio.buffer.Test02NioBufferPutGetDataType;
 
 /**
  * @Describe:
@@ -9,9 +9,9 @@ import com.demo.nio.buffer.NioBufferPutGetDataType;
  **/
 public class test {
     public static void main(String[] args) {
-        NioBufferPutGetDataType nioBufferPutGetDataType = new NioBufferPutGetDataType();
+        Test02NioBufferPutGetDataType nioBufferPutGetDataType = new Test02NioBufferPutGetDataType();
     
-        Class<? extends NioBufferPutGetDataType> aClass = nioBufferPutGetDataType.getClass();
+        Class<? extends Test02NioBufferPutGetDataType> aClass = nioBufferPutGetDataType.getClass();
         ClassLoader classLoader = nioBufferPutGetDataType.getClass().getClassLoader();
         String simpleName = nioBufferPutGetDataType.getClass().getSimpleName();
         System.out.println(simpleName);

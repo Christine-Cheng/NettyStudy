@@ -7,17 +7,33 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
+ * 0)理解NIO的基本组件Selector,Channel和Buffer的关系
+ *
+ * 1) NIO 的通道类似于流,但有些区别如下:
+ *  通道可以同时进行读写,而流只能读或者只能写
+ *  通道可以实现异步读写数据
+ *  通道可以从缓冲读数据,也可以写数据到缓冲:
+ * 2) BIO 中的stream 是单向的,例如FileInputStream 对象只能进行读取数据的操作,而NIO 中的通道(Channel)
+ * 是双向的,可以读操作,也可以写操作.
+ * 3) Channel 在NIO 中是一个接口
+ * public interface Channel extends Closeable{}
+ * 4) 常用的Channel 类有: FileChannel,DatagramChannel,ServerSocketChannel 和SocketChannel .
+ *  【ServerSocketChannel 类似ServerSocket , SocketChannel 类似Socket】
+ */
+
+/**
  * @Describe: 理解FileChannel写,及Channel和Buffer的交互
  * @Author: HAPPY
  * @Date: 2022-10-28 15:20 星期五
  **/
-public class NioFileChannelWrite {
+public class Test01NioFileChannelWrite {
     public static void main(String[] args) {
         try {
             String str = "Hello, Siri";
             
             //NIO是对Java原生IO流的包装
             //故创建一个输出流--->Channel
+            //通过debug可以知道,FileOutputStream是包含FileChannel的
             FileOutputStream fileOutputStream = new FileOutputStream("d:\\file01.txt");
             
             //通过fileOutputStream获取对应的FileChannel

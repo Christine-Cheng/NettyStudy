@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-31 10:20 星期一
  **/
-public class NioFileChannelTransferFrom {
+public class Test04NioFileChannelTransferFrom {
     public static void main(String[] args) {
         try {
             long timeMillis1 = System.currentTimeMillis();

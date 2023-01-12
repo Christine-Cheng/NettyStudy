@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-28 19:14 星期五
  **/
-public class NioFileChannelReadWrite {
+public class Test03NioFileChannelReadWrite {
     public static void main(String[] args) {
         try {
             String filePath01 = "staticFile/file01.txt";

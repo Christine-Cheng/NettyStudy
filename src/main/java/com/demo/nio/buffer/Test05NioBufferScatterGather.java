@@ -16,7 +16,7 @@ import java.util.Arrays;
  * @Author: HAPPY
  * @Date: 2022-10-31 16:51 星期一
  **/
-public class NIOBufferScatterGather {
+public class Test05NioBufferScatterGather {
     public static void main(String[] args) {
     
         try {
