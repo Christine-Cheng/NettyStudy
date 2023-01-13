@@ -1,10 +1,13 @@
 package com.demo.nio.channel;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * 0)理解NIO的基本组件Selector,Channel和Buffer的关系
@@ -31,10 +34,19 @@ public class Test01NioFileChannelWrite {
         try {
             String str = "Hello, Siri";
             
+            String filePath = "./staticFile/file01.txt";
+            File file = new File(filePath);
+            if (file.exists()) {
+                Files.delete(Paths.get(filePath));
+            } else {
+                file.getParentFile().mkdir();
+            }
+            file.createNewFile();
+    
             //NIO是对Java原生IO流的包装
             //故创建一个输出流--->Channel
             //通过debug可以知道,FileOutputStream是包含FileChannel的
-            FileOutputStream fileOutputStream = new FileOutputStream("d:\\file01.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             
             //通过fileOutputStream获取对应的FileChannel
             //此fileChannel的真实类型是FileChannelImpl

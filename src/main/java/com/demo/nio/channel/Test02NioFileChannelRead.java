@@ -16,7 +16,8 @@ public class Test02NioFileChannelRead {
         try {
             //NIO是对Java原生IO流的包装
             //故创建一个输入流--->Channel
-            File file = new File("d:\\file01.txt");
+            String filePath = "./staticFile/file01.txt";
+            File file = new File(filePath);
             FileInputStream fileInputStream = new FileInputStream(file);
         
             //通过fileOutputStream获取对应的FileChannel
