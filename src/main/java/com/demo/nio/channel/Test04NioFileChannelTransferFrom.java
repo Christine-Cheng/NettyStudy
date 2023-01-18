@@ -7,7 +7,12 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 /**
- * @Describe: transferFrom 复制图片
+ * @Describe: transferFrom从目标通道复制数据到当前通道
+ * 1) 使用FileChannel(通道)和方法transferFrom ,完成文件的拷贝
+ * 2) 拷贝一张图片
+ *
+ * Channel拷贝文件
+ * transferFrom 复制图片
  * @Author: HAPPY
  * @Date: 2022-10-31 10:20 星期一
  **/

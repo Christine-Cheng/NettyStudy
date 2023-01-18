@@ -7,14 +7,15 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * @Describe: MappedByteBuffer可以在内存(堆外内存)中直接修改文件,操作系统不需要拷贝一次
+ * @Describe: Buffer和Channel的注意事项和细节3: MappedByteBuffer可以在内存(堆外内存)中直接修改文件,操作系统不需要拷贝一次
+ * MappedByteBuffer,可以让文件直接在内存（堆外的内存）中进行修改,而如何同步到文件由NIO 来完成
  * @Author: HAPPY
  * @Date: 2022-10-31 14:30 星期一
  **/
 public class Test04NioBufferMapped {
     public static void main(String[] args) {
         try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile("staticFile/file01.txt", "rw");//rw:读写模式
+            RandomAccessFile randomAccessFile = new RandomAccessFile("./staticFile/file01.txt", "rw");//rw:读写模式
             //获取channel
             FileChannel channel = randomAccessFile.getChannel();
     
@@ -26,8 +27,8 @@ public class Test04NioBufferMapped {
              * MappedByteBuffer的实际类型DirectByteBuffer
              */
             MappedByteBuffer mappedByteBuffer = channel.map(FileChannel.MapMode.READ_WRITE, 0, 5);
-            mappedByteBuffer.put(0, (byte) 'F');
-            mappedByteBuffer.put(4, (byte) 'k');
+            mappedByteBuffer.put(0, (byte) 'H');
+            mappedByteBuffer.put(4, (byte) 'o');
             
             //mappedByteBuffer.put(5, (byte) '/');//IndexOutOfBoundsException
             //结论:MappedByteBuffer中的第三个参数是可修改的字节大小,而不是索引位置

@@ -25,7 +25,12 @@ import java.nio.file.Paths;
  */
 
 /**
- * @Describe: 理解FileChannel写,及Channel和Buffer的交互
+ * @Describe:
+ * 1) 使用前面学习后的ByteBuffer(缓冲) 和FileChannel(通道)， 将"Hello, Siri" 写入到file01.txt 中
+ * 2) 文件不存在就创建
+ *
+ * 利用通道缓冲的方式写入文件,将通道引入IO中
+ * 理解FileChannel写,及Channel和Buffer的交互
  * @Author: HAPPY
  * @Date: 2022-10-28 15:20 星期五
  **/

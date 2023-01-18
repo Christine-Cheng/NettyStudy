@@ -7,6 +7,9 @@ import java.nio.channels.FileChannel;
 
 /**
  * @Describe:
+ * 1) 使用FileChannel(通道) 和方法read , write，完成文件的拷贝
+ * 2) 拷贝一个文本文件1.txt , 放在项目下即可
+ *
  * FileChannel + Buffer 进行拷贝文件
  * file1--->Channel01--->Buffer--->Channel02--->file2
  *
@@ -27,8 +30,8 @@ public class Test03NioFileChannelReadWrite {
     
             ByteBuffer byteBuffer = ByteBuffer.allocate(512);
             while (true) {//循环读取
-                //注意:buffer中只有512字节所以要clear()
-                /*
+                //注意:buffer初始化后有512字节的存储空间,而buffer不会去清除内存空间中的值,或者覆盖,所以要clear()
+                /*源码
                 public Buffer clear() {
                     position = 0;
                     limit = capacity;

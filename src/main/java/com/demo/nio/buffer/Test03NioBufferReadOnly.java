@@ -3,7 +3,7 @@ package com.demo.nio.buffer;
 import java.nio.ByteBuffer;
 
 /**
- * @Describe: buffer只读
+ * @Describe: Buffer和Channel的注意事项和细节2: buffer只读
  * @Author: HAPPY
  * @Date: 2022-10-31 11:22 星期一
  **/
