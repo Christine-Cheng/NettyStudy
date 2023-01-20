@@ -1,4 +1,4 @@
-package com.demo.nio.channel;
+package com.demo.nio.buffer_channel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +17,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-28 17:35 星期五
  **/
-public class Test02NioFileChannelRead {
+public class Test03NioFileChannelRead {
     public static void main(String[] args){
         try {
             //NIO是对Java原生IO流的包装

@@ -1,4 +1,4 @@
-package com.demo.nio.buffer;
+package com.demo.nio.buffer_channel;
 
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ import java.util.Arrays;
  * @Author: HAPPY
  * @Date: 2022-10-31 16:51 星期一
  **/
-public class Test05NioBufferScatterGather {
+public class Test09NioBufferScatterGather {
     public static void main(String[] args) throws IOException {
         //使用ServerSocketChannel 和SocketChannel 网络
         

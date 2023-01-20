@@ -1,4 +1,4 @@
-package com.demo.nio.channel;
+package com.demo.nio.buffer_channel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,7 +34,7 @@ import java.nio.file.Paths;
  * @Author: HAPPY
  * @Date: 2022-10-28 15:20 星期五
  **/
-public class Test01NioFileChannelWrite {
+public class Test02NioFileChannelWrite {
     public static void main(String[] args) {
         try {
             String str = "Hello, Siri";

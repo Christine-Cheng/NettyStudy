@@ -1,4 +1,4 @@
-package com.demo.nio.channel;
+package com.demo.nio.buffer_channel;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,7 +16,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-28 19:14 星期五
  **/
-public class Test03NioFileChannelReadWrite {
+public class Test04NioFileChannelReadWrite {
     public static void main(String[] args) {
         try {
             String filePath01 = "staticFile/file01.txt";

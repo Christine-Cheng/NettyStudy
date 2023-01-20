@@ -1,4 +1,4 @@
-package com.demo.nio.buffer;
+package com.demo.nio.buffer_channel;
 
 import java.nio.ByteBuffer;
 
@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
  * @Author: HAPPY
  * @Date: 2022-10-31 11:22 星期一
  **/
-public class Test03NioBufferReadOnly {
+public class Test07NioBufferReadOnly {
     
     public static void main(String[] args) {
         ByteBuffer byteBuffer = ByteBuffer.allocate(33);

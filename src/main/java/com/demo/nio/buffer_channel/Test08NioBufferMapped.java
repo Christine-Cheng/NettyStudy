@@ -1,4 +1,4 @@
-package com.demo.nio.buffer;
+package com.demo.nio.buffer_channel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-31 14:30 星期一
  **/
-public class Test04NioBufferMapped {
+public class Test08NioBufferMapped {
     public static void main(String[] args) {
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile("./staticFile/file01.txt", "rw");//rw:读写模式

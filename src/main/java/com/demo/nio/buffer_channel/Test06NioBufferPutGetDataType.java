@@ -1,4 +1,4 @@
-package com.demo.nio.buffer;
+package com.demo.nio.buffer_channel;
 
 import java.nio.ByteBuffer;
 
@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
  * @Author: HAPPY
  * @Date: 2022-10-31 10:57 星期一
  **/
-public class Test02NioBufferPutGetDataType {
+public class Test06NioBufferPutGetDataType {
     public static void main(String[] args) {
         ByteBuffer byteBuffer = ByteBuffer.allocate(64);
         //类型化放置数据

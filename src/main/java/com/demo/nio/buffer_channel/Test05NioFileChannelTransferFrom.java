@@ -1,4 +1,4 @@
-package com.demo.nio.channel;
+package com.demo.nio.buffer_channel;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ import java.nio.channels.FileChannel;
  * @Author: HAPPY
  * @Date: 2022-10-31 10:20 星期一
  **/
-public class Test04NioFileChannelTransferFrom {
+public class Test05NioFileChannelTransferFrom {
     public static void main(String[] args) {
         try {
             long timeMillis1 = System.currentTimeMillis();

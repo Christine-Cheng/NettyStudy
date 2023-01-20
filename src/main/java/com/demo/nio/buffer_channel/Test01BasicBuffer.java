@@ -1,4 +1,4 @@
-package com.demo.nio.buffer;
+package com.demo.nio.buffer_channel;
 
 import java.nio.IntBuffer;
 
