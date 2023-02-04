@@ -31,6 +31,9 @@ public class NioServer {
         //创建ServerSocketChannel -> ServerSocket
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         
+        /**
+         * Selector的真正实现类是WindowsSelectorImpl
+         */
         //创建一个Selector对象
         Selector selector = Selector.open();
         
