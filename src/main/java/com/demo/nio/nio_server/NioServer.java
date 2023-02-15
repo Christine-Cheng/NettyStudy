@@ -47,7 +47,11 @@ public class NioServer {
         
         //把serverSocketChannel注册到selector中,监听事件为OP_ACCEPT
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);//需要把服务端的channel注册到selector中.
+        System.out.println("注册后的selectionKey的数量 = " + selector.keys().size());
+        //selector.keys()表示所有注册到selector上面的channel的selectionKey
+        //selector.selectedKeys();表示进行监听的时候,注册到selector上面的channel有事件发生,该channel对应的selectionKey
         
+    
         //循环获取客户端连接
         while (true) {
             //等待1秒钟,如果没有事件发生则返回0.(当前serverSocketChannel没有事件发生)
@@ -59,8 +63,9 @@ public class NioServer {
             //如果selector.select(1000)返回值>0,则获取相关的SelectionKey的集合
             //1.如果返回的>0,表示已经获取到监听的事件
             //2. selector.selectedKeys() 返回关注事件的集合
-            //通过selectionKeys方向获取通道.
-            Set<SelectionKey> selectionKeys = selector.selectedKeys();
+            //通过selectionKeys反向获取通道.
+            Set<SelectionKey> selectionKeys = selector.selectedKeys();//selector.selectedKeys()有事件发生的selectionKey的数量
+            System.out.println("有事件发生的selectionKey的数量 = " + selectionKeys.size());/*第一个注册的一定是ServerSocketChannel*/
             
             //遍历Set<SelectionKey>,使用迭代器遍历
             Iterator<SelectionKey> keyIterator = selectionKeys.iterator();
@@ -68,15 +73,16 @@ public class NioServer {
             while (keyIterator.hasNext()) {
                 //获取到SelectionKey
                 SelectionKey key = keyIterator.next();
-    
+                
                 /**
                  * 客户端不管怎样骚操作,都要经历这一步注册,与服务器建立连接
                  */
                 //根据key,对应的通道发生的事件做相应处理
                 if (key.isAcceptable()) {//若事件是OP_ACCEPT,有客户端连接服务器
                     //对当前客户端生成一个新的SocketChannel
-                    SocketChannel socketChannel = serverSocketChannel.accept();//serverSocketChannel.accept()是阻塞的,又当前是SelectionKey.isAcceptable()连接成功要处理业务,所以是否阻塞已经不重要了
-    
+                    //虽然serverSocketChannel.accept()是阻塞的,但当前是SelectionKey.isAcceptable()连接成功要处理业务,所以是否阻塞已经不重要了
+                    SocketChannel socketChannel = serverSocketChannel.accept();
+                    
                     System.out.println("客户端连接成功~~~;生成了一个SocketChannel: " + socketChannel.hashCode());
                     
                     //将SocketChannel设置为非阻塞
@@ -84,12 +90,16 @@ public class NioServer {
                     
                     //将当前生成的socketChannel注册到selector,当前监听事件是OP_READ,同时给SocketChannel关联一个Buffer
                     socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(1024));
+                    
+                    System.out.println("客户端连接后,注册的selectionKey数量 = " + selector.keys().size());//这里的数量需要减去一个服务端的channel,数目是从2,3,4...开始
                 }
-    
+                
                 /**
                  * 建立完成连接进行数据交互
                  */
                 if (key.isReadable()) {//发生事件OP_READ
+                    //此处可以进行修改,事件发生的状态//例如:key.interestOps(SelectionKey.OP_WRITE);
+                    
                     //通过key方向获取到对应channel
                     SocketChannel socketChannel = (SocketChannel) key.channel();
                     //获取到该channel关联的buffer
@@ -101,7 +111,6 @@ public class NioServer {
                 //手动从集合中移除当前SelectionKey,防止重复操作
                 keyIterator.remove();
             }
-            
         }
     }
 }
