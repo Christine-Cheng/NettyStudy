@@ -81,6 +81,7 @@ public class NioServer {
                 if (key.isAcceptable()) {//若事件是OP_ACCEPT,有客户端连接服务器
                     //对当前客户端生成一个新的SocketChannel
                     //虽然serverSocketChannel.accept()是阻塞的,但当前是SelectionKey.isAcceptable()连接成功要处理业务,所以是否阻塞已经不重要了
+                    //此处体现:ServerSocketChannel 在服务器端监听新的客户端Socket 连接
                     SocketChannel socketChannel = serverSocketChannel.accept();
                     
                     System.out.println("客户端连接成功~~~;生成了一个SocketChannel: " + socketChannel.hashCode());
