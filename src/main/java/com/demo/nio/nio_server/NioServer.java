@@ -28,31 +28,31 @@ import java.util.Set;
  **/
 public class NioServer {
     public static void main(String[] args) throws IOException {
-        //创建ServerSocketChannel -> ServerSocket
+        //step1:创建ServerSocketChannel -> ServerSocket
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         
         /**
          * Selector的真正实现类是WindowsSelectorImpl
          */
-        //创建一个Selector对象
+        //step2:创建一个Selector对象
         Selector selector = Selector.open();
         
-        //绑定一个端口,并在服务器端监听
+        //step3:绑定一个端口,并在服务器端监听
         int port = 6666;
         InetSocketAddress inetSocketAddress = new InetSocketAddress(port);
         serverSocketChannel.socket().bind(inetSocketAddress);
         
-        //设置为非阻塞
+        //step4:设置为非阻塞
         serverSocketChannel.configureBlocking(false);
         
-        //把serverSocketChannel注册到selector中,监听事件为OP_ACCEPT
+        //step5:把serverSocketChannel注册到selector中,监听事件为OP_ACCEPT
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);//需要把服务端的channel注册到selector中.
         System.out.println("注册后的selectionKey的数量 = " + selector.keys().size());
         //selector.keys()表示所有注册到selector上面的channel的selectionKey
         //selector.selectedKeys();表示进行监听的时候,注册到selector上面的channel有事件发生,该channel对应的selectionKey
         
     
-        //循环获取客户端连接
+        //step6:循环获取客户端连接
         while (true) {
             //等待1秒钟,如果没有事件发生则返回0.(当前serverSocketChannel没有事件发生)
             if (selector.select(1000) == 0) {//没有事件发生
