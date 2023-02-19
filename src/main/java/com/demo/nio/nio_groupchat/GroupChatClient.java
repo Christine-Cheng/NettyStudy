@@ -1,4 +1,4 @@
-package com.demo.nio.nio_groupchat_demo;
+package com.demo.nio.nio_groupchat;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

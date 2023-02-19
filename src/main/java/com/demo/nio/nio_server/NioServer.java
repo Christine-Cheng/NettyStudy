@@ -1,4 +1,4 @@
-package com.demo.nio.nio_server_demo;
+package com.demo.nio.nio_server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
