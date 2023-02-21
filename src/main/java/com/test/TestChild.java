@@ -1,4 +1,4 @@
-package com.demo.test;
+package com.test;
 
 /**
  * @Describe:

@@ -141,6 +141,7 @@ public class GroupChatServer {
      */
     private void sendMsgToOtherClient(String msg, SocketChannel selfChannel) throws IOException {
         System.out.println("服务器转发消息...");
+        System.out.println("服务器转发数据给客户端线程: " + Thread.currentThread().getName());
         //遍历,所有注册到selector上的SocketChannel,并排除selfChannel
         for (SelectionKey key : selector.keys()) {
             //通过key,取出对应的SocketChannel

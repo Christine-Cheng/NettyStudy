@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.demo.nio.netty</groupId>
+    <groupId>com.netty</groupId>
     <artifactId>NettyStudy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>NettyStudy</name>
@@ -99,6 +99,7 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+        <!--netty https://netty.io/downloads.html-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId> <!-- Use 'netty5-all' for 5.0-->
@@ -136,7 +137,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.demo.nio.netty.NettyStudyApplication</mainClass>
+                    <mainClass>com.netty.NettyStudyApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
