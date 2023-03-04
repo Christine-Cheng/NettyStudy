@@ -3,7 +3,7 @@ package com.demo.aop;
 import lombok.Data;
 
 /**
- * @Describe:
+ * @Describe: 定义一个操作类的标准模型
  * @Author Happy
  * @Create 2023/3/3-15:38
  **/

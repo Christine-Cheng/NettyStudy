@@ -1,7 +1,7 @@
 package com.demo.aop;
 
 /**
- * @Describe:
+ * @Describe: 通过实现Covert接口,把SaveOrder的orderId字段值赋值给日志标准模型OperateLogDo
  * @Author Happy
  * @Create 2023/3/3-17:22
  **/

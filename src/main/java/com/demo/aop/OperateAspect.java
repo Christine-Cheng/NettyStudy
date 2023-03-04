@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 @Aspect
 public class OperateAspect {
     
-    private Boolean result = true;
     
     private ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
             1, 1, 1,
@@ -38,7 +37,7 @@ public class OperateAspect {
     
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        Object proceed = proceedingJoinPoint.proceed();
+        Object result = proceedingJoinPoint.proceed();
         threadPoolExecutor.execute(() -> {
             try {
                 MethodSignature signature = (MethodSignature) proceedingJoinPoint.getSignature();
@@ -51,6 +50,22 @@ public class OperateAspect {
                 OperateLogDo operateLogDo = new OperateLogDo();
                 operateLogDo.setDesc(annotation.desc());
                 operateLogDo.setResult(result.toString());
+                /**
+                 * operateLogDo.setOrderId();//此处的日志模型中 订单号为orderId ,
+                 *
+                 * 那么用反射+if判断的方式 去取不同类的订单号字段的值是不现实的,字段都不一定一样.
+                 *
+                 * 而在Service的注解中"@RecordOperate"写回调函数显然不可行,因为在Java的注解中只能是基本类型和class类型
+                 *
+                 * 那么方法是,定义一个接口,通过指定的方式去转换,根据不同入参,把值去给到标准模型.
+                 * 例如定义接口Covert,然后把入参转化为日志标准模型OperateLogDo,这样就可以根据不同的入去实现Covert接口就行
+                 * 由此诞生了SaveOrderCovert,UpdateOrderCovert,通过实现Covert接口,
+                 * 把SaveOrder的orderId字段值和UpdateOrder的id字段赋值给日志标准模型OperateLogDo
+                 *
+                 * 而在注解中 "@RecordOperate" 中去添加Covert的泛型, 就可以实现通过注解获取各自的对象属性了
+                 */
+                
+                
     
                 System.out.println("insert operating "+ new Gson().toJson(operateLogDo));
                 
