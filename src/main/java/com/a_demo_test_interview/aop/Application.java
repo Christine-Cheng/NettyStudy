@@ -1,4 +1,4 @@
-package com.demo.aop;
+package com.a_demo_test_interview.aop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

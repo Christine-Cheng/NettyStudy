@@ -1,4 +1,4 @@
-package com.demo.aop;
+package com.a_demo_test_interview.aop;
 
 import com.google.gson.Gson;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -31,7 +31,7 @@ public class OperateAspect {
      * 2.横切逻辑
      * 3.植入(spring完成)
      */
-    @Pointcut("@annotation(com.demo.aop.RecordOperate)")
+    @Pointcut("@annotation(com.a_demo_test_interview.aop.RecordOperate)")
     public void pointCut() {
     }
     
