@@ -1,4 +1,4 @@
-package com.demo.nio.nio_zerocopy;
+package com.netty_demo.nio.nio_zerocopy;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;

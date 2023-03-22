@@ -1,4 +1,4 @@
-package com.demo.nio.buffer_channel;
+package com.netty_demo.nio.buffer_channel;
 
 
 import java.io.IOException;

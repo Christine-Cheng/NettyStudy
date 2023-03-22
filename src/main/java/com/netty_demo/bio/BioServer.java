@@ -1,4 +1,4 @@
-package com.demo.bio;
+package com.netty_demo.bio;
 
 import java.io.InputStream;
 import java.net.ServerSocket;
