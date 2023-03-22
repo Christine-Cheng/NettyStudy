@@ -1,4 +1,4 @@
-package com.test;
+package com.demo_test_interview.test;
 
 import com.demo.nio.buffer_channel.Test06NioBufferPutGetDataType;
 

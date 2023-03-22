@@ -1,4 +1,4 @@
-package com.test;
+package com.demo_test_interview.test;
 
 /**
  * @Describe:
@@ -12,6 +12,9 @@ public class TestParent {
     static {System.out.println("Parent static code block");}
     
     public TestParent() {
-        System.out.println("Parent code block");
+        System.out.println("Parent constructor");
     }
+    
+    
+    
 }
