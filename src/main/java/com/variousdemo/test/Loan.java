@@ -1,5 +1,8 @@
 package com.variousdemo.test;
 
+/**
+ * 模拟计算贷款
+ */
 public class Loan{
     public static void main(String[] args) {
     
