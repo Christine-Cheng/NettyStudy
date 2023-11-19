@@ -25,7 +25,7 @@ import java.util.Date;
  **/
 public class DeepCloning2 {
     public static void main(String[] args) throws CloneNotSupportedException, Exception {
-        Date date =  new Date(1231231231231l);
+        Date date =  new Date(1231231231231L);
         User1 user = new User1();
         user.setName("波波烤鸭");
         user.setAge(18);
@@ -48,7 +48,7 @@ public class DeepCloning2 {
         User1 user1 = (User1) ois.readObject();
     
         // 修改原型对象的值
-        date.setTime(221321321321321l);
+        date.setTime(221321321321321L);
         System.out.println(user.getBirth());
     
         System.out.println("------克隆对象的属性-------");
