@@ -8,6 +8,11 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
  * @Describe: 声明式事务工具类
  * 【【Java高级】如何写出优雅可靠事务代码？基于Spring事务扩展】
  * https://www.bilibili.com/video/BV168411h7PU/?share_source=copy_web&vd_source=5f66f394e277af98190ae0ed6c364b6b
+ *
+ * [目的]
+ * 在声明式事务中发送发送消息
+ * 通过本地事务完成后,发送消息
+ *
  * @Author Happy
  * @Create 2023/3/3-14:34
  **/
