@@ -16,7 +16,7 @@ public class NettyStudyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(NettyStudyApplication.class, args);
-        log.info("NettyStudy启动了!哈哈哈!!!");
+        log.info("\nNettyStudy启动了!哈哈哈!!!");
     }
 
 }
